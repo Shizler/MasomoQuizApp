@@ -2,46 +2,30 @@
 Usage:
     masomo quiz_list
     masomo quiz_import <path_to_quiz_JSON>
-    masomo quiz_take <quiz_name>
-    masomo (-i | --interactive)
-    masomo (-h | --help | --version)
-Options:
-    -i, --interactive  Interactive Mode
-    -h, --help  Show this screen and exit.
-    
+    masomo take_quiz <quiz_name>
 """
 
 import sys
 import os
 import cmd
-# from app.amity import Amity
 from docopt import docopt, DocoptExit
-from listsquiz import ListQuiz
+from list_quiz import ListQuiz
+from reading_json import QuizTake
 
 
 def docopt_cmd(func):
-    """
-    This decorator is used to simplify the try/except block and pass the result
-    of the docopt parsing to the called action.
-    """
     def fn(self, arg):
         try:
             opt = docopt(fn.__doc__, arg)
 
         except DocoptExit as e:
-            # The DocoptExit is thrown when the args do not match.
-            # We print a message to the user and the usage block.
-
+           
             print('Invalid Command!')
             print(e)
             return
-
         except SystemExit:
-            # The SystemExit exception prints the usage for --help
-            # We do not need to do the print here.
-
+          
             return
-
         return func(self, opt)
 
     fn.__name__ = func.__name__
@@ -49,45 +33,51 @@ def docopt_cmd(func):
     fn.__dict__.update(func.__dict__)
     return fn
 
+# creating an instance of class ListQuiz
 q=ListQuiz()
 
+# creating an instance of class QuizTake
+r=QuizTake()
 class MasomoSystem(cmd.Cmd):
+    # welcomes the user
     intro = 'Welcome to Masomo' \
         + ' (type help for a list of commands.)'
     prompt = '(Masomo) '
     file = None
 
-    @docopt_cmd
-    def do_quiz_list(self,args):
-        """Usage: quiz_list..."""
-        q.find()
-        
+    # listing the commands
 
     @docopt_cmd
-    def do_quiz_import(self, args):
-        """Usage: quiz_import <path_to_quiz_JSON>..."""
-        print ("success")
+    def do_quiz_list(self,args):
+        """Usage: quiz_list"""
+        # calls the 'find' function in list_quiz file
+        # returns the list of quizzes available in my library
+        q.find()
     @docopt_cmd
-    def do_quiz_take(self, args):
-        """Usage: quiz_take<quiz_name>..."""
-        result
+    def do_quiz_import(self, args):
+        """Usage: quiz_import <path_to_quiz_JSON>"""
         print ("success")
+
+    @docopt_cmd
+    def do_take_quiz(self, args):
+        """Usage: take_quiz <quiz_name>"""
+        '''make a var name_quiz that takes in the <quiz_name> input by the user.
+        this var is passed to read_file function in reading_json file to retrieve 
+        its url,then then display the quiz'''
+        name_quiz = args["<quiz_name>"]
+        r.read_file(name_quiz)
 
 
     def do_clear(self, arg):
-        """Clears screen>"""
+        # Clears the screen
 
         os.system('clear')
 
     def do_quit(self, arg):
-        """Quits out of Interactive Mode."""
+        # Quits out of the system
 
         print('Good Bye!')
         exit()
-
-        print('Good Bye!')
-        exit()
-
 
 opt = docopt(__doc__, sys.argv[1:])
 
