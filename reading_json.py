@@ -1,66 +1,61 @@
 
 import json
 import time 
+import os
 
-def read_file(): 
+class QuizTake():
 
-    # accesses the json file
-    # start=time.time()
-    path ='C:\\Users\\andela\\Documents\\MasomoProject\\quiz.json'
-    # add var of quiz at the end of path
-    json_data=open(path).read() 
+  def read_file(self,name):
+    # receives <quiz_name> as in argument name
+    # arg is passed to retrieve the particular quiz
+    file_path =''
+    path='C:\\Users\\andela\\Documents\\venv\\MasomoQuizApp\\quizzes\\'
+    for root, dirs, files in os.walk(path):
+        for file in files:
+           if file == name+'.json':
+              file_path = os.path.join(root,file)
 
- 
-    data=json.loads(json_data) 
+    if file_path =='':
+      # checks if user has input a quiz not available
+       print ("Quiz not found")
+    else:
+      # opens,reads and loads the json file
+      json_data = open(file_path).read() 
+      data = json.loads(json_data) 
 
-    # initializes the var answerlist that stores the score
-
-    answersList = 0
- 
-    for index, question in enumerate(data): 
+      # initializes the var answerlist that stores the score
+      answersList = 0
+      # enumerate loops over something and has an automatic counter
+      # prints the question and answer
+      for index, question in enumerate(data): 
         print (index+1, question['question']) 
         print ("A:"+ question['A']) 
         print ("B:"+ question['B']) 
         print ("C:"+ question['C']) 
         print ("D:"+ question['D']) 
-        # print ('\n') 
-      
+        
+
         answers=input('Enter your answer')
         if answers.isalpha():
-        # print ('\n') 
 
           if question['answer'] == answers:
-             answersList += 1
-             print ("Correct Answer")
+           answersList += 1
+           print ("Correct Answer")
           else:
-             print ("Incorrect answer.The correct answer is " + question['answer'])
-             print ('\n') 
+           print ("Incorrect answer.The correct answer is " + question['answer'])
+           print ('\n') 
         else:
-            print ("Invalid input.Please input A,B,C or D")
+          print ("Invalid input.Please input A,B,C or D")
 
 
-    
-    print("You got {} answers right".format(answersList))
 
-    finish=time.time()
-    # if finish-start>20
-    
-    # for element in range(len(data)):
-    #     for key,value in data[element].items():
-    #         print (key[0])
+          print("You got {} answers right".format(answersList))
 
- 
-         
-    # for element in data['one']:      #     for inner_element in element['number']: 
-     #         print ("Question" + (inner_element) +":") 
-     #     for elements in element['A']: 
-    #       print ("A" + (elements)) 
-read_file() 
- 
+    read_file() 
 
 
 
 
 
 
- 
+
