@@ -3,6 +3,11 @@ Usage:
     masomo quiz_list
     masomo quiz_import <path_to_quiz_JSON>
     masomo take_quiz <quiz_name>
+    masomo (-i | --interactive)
+    masomo (-h | --help | --version)
+Options:
+    -i, --interactive  Interactive Mode
+    -h, --help  Show this screen and e
 """
 
 import sys
@@ -19,12 +24,13 @@ def docopt_cmd(func):
             opt = docopt(fn.__doc__, arg)
 
         except DocoptExit as e:
-           
+            
             print('Invalid Command!')
             print(e)
             return
+
         except SystemExit:
-          
+           
             return
         return func(self, opt)
 
@@ -42,7 +48,7 @@ class MasomoSystem(cmd.Cmd):
     # welcomes the user
     intro = 'Welcome to Masomo' \
         + ' (type help for a list of commands.)'
-    prompt = '(Masomo) '
+    prompt = '(Masomo)'
     file = None
 
     # listing the commands
@@ -56,7 +62,9 @@ class MasomoSystem(cmd.Cmd):
     @docopt_cmd
     def do_quiz_import(self, args):
         """Usage: quiz_import <path_to_quiz_JSON>"""
-        print ("success")
+        petpath=args["<path_to_quiz_JSON>"]
+        r.import_quiz(petpath)
+
 
     @docopt_cmd
     def do_take_quiz(self, args):
@@ -64,17 +72,17 @@ class MasomoSystem(cmd.Cmd):
         '''make a var name_quiz that takes in the <quiz_name> input by the user.
         this var is passed to read_file function in reading_json file to retrieve 
         its url,then then display the quiz'''
-        name_quiz = args["<quiz_name>"]
+        name_quiz=args["<quiz_name>"]
         r.read_file(name_quiz)
 
 
     def do_clear(self, arg):
-        # Clears the screen
+        """Clears screen>"""
 
         os.system('clear')
 
     def do_quit(self, arg):
-        # Quits out of the system
+        """Quits out of Interactive Mode."""
 
         print('Good Bye!')
         exit()
