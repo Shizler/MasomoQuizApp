@@ -1,0 +1,76 @@
+[ 
+	 { 
+	"question":"Which superhero carries an indestructible shield?",
+	"A": "The Green Lantern",
+	"B":"Captain America",
+	"C": "Captain Flag",
+	"D": "The Red Tornado",
+	"answer":"B"
+	} 
+,
+	{ 
+	"question": " Which character is often romantically paired with Batman?", 
+	"A":" The Black Canary", 
+	"B": "Miss America", 
+	"C": "Catwoman", 
+	"D": "Hawkgirl", 
+	"answer":"A" 
+	 } ,
+
+	{ 
+	"question": " Which superhero started out as a petty criminal?", 
+	"A":"The Atom", 
+	"B":"Spiderman", 
+	"C":"The Blue Knight", 
+	"D":"Plastic Man", 
+	"answer":"D" 
+	}, 
+	{ 
+	"question": " Which superhero's alter ego is Raymond Palmer?", 
+	 "A":"The Atom", 
+	 "B": "Hawkman", 
+	 "C": "The Green Arrow", 
+	 "D": " The Tornado", 
+	 "answer":"A" 
+	} ,
+	{ 
+	"question": " Which superhero is the medical doctor for the X-men?", 
+	"A":" Storm", 
+	"B":"Shadowcat", 
+	"C":"Ice Man", 
+	"D":"The Beast", 
+	"answer":"D" 
+	} ,
+	{ 
+	"question": " Who is Batgirl's father (Barbara Gordon)?", 
+	"A":"  The Mayor", 
+	"B": "  The Governor", 
+	"C": " Batman's Butler", 
+	"D": "  The Chief of Police", 
+	"answer":"D" 
+	} ,
+	{ 
+	"question": " Which superhero gains his power from a ring?", 
+	"A":" The Green Lantern", 
+	"B": "Storm", 
+	"C": "Dazzler", 
+	"D": "The Hulk", 
+	"answer":"A" 
+	} ,
+	{ 
+	"question": " Which superhero can manipulate the weather?", 
+	"A":" The Tornado", 
+	"B":" The Atom", 
+	"C":" Strom", 
+	"D":" The Thing", 
+	"answer":"C" 
+	} ,
+	{ 
+	"question": " Which Island does Wonder Woman call home?", 
+	"A":"Emerald Island", 
+	"B": "Paradise Island", 
+	"C": "Amazonia", 
+	"D": "Eden Isle", 
+	"answer":"B" 
+	} 
+] 

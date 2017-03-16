@@ -2,6 +2,7 @@
 import json
 import time 
 import os
+from shutil import copyfile, move
 
 class QuizTake():
 
@@ -33,6 +34,7 @@ class QuizTake():
         print ("B:"+ question['B']) 
         print ("C:"+ question['C']) 
         print ("D:"+ question['D']) 
+
         
 
         answers=input('Enter your answer')
@@ -50,12 +52,13 @@ class QuizTake():
 
 
           print("You got {} answers right".format(answersList))
-
-    read_file() 
-
-
-
-
-
-
-
+  def import_quiz(self,path):
+      print (path)
+      for root, dirs, files in os.walk(path):
+        for file in files:
+           if file.endswith('.json'):
+              file_path = os.path.join(root,file)
+              dest='C:/Users/andela/Documents/venv/MasomoQuizApp/quizzes'
+              print(file_path)
+              move(file_path,dest)
+              print ("successfully")

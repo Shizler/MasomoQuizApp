@@ -1,9 +1,8 @@
-[ 
- { 
+[
+{ 
 "question":"Grand Central Terminal, Park Avenue, New York is the world's", 
 "A":"largest railway station", 
  "B":"longest railway station", 
- "C":"highest railway station",
 "D":"None of the above", 
 "answer":"a" 
 
@@ -26,4 +25,5 @@
  ] 
  
  
+27 
  
