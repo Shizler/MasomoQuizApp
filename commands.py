@@ -16,6 +16,8 @@ import cmd
 from docopt import docopt, DocoptExit
 from list_quiz import ListQuiz
 from reading_json import QuizTake
+import click
+from design import title
 
 
 def docopt_cmd(func):
@@ -44,10 +46,13 @@ q=ListQuiz()
 
 # creating an instance of class QuizTake
 r=QuizTake()
+
 class MasomoSystem(cmd.Cmd):
     # welcomes the user
-    intro = 'Welcome to Masomo' \
-        + ' (type help for a list of commands.)'
+    title()
+
+    intro = click.secho('Welcome to Masomo' \
+        + ' (type help for a list of commands.)',fg='cyan')
     prompt = '(Masomo)'
     file = None
 

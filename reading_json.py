@@ -1,10 +1,18 @@
-
+from threading import Thread
 import json
 import time 
 import os
 from shutil import copyfile, move
-
+import click
 class QuizTake():
+  # def timer():
+  #   print ('time started...')
+  #   for i in xrange(10,0,-1):
+  #     time.sleep(1)
+  #     time_remaining -= 1;
+  #     print ('Time remaining: %d seconds\r '% i,)
+
+  #     sys.stdout.flush()
 
   def read_file(self,name):
     # receives <quiz_name> as in argument name
@@ -29,6 +37,7 @@ class QuizTake():
       # enumerate loops over something and has an automatic counter
       # prints the question and answer
       for index, question in enumerate(data): 
+        click.secho('********************************************************************************',fg='cyan')
         print (index+1, question['question']) 
         print ("A:"+ question['A']) 
         print ("B:"+ question['B']) 
@@ -62,3 +71,10 @@ class QuizTake():
               print(file_path)
               move(file_path,dest)
               print ("successfully")
+
+  #             print(time_remaining)
+  # timer()
+  # t1=Thread(target=timer)
+  # t2=Thread(target=read_file)
+  # t1.start()
+  # t2.start()
