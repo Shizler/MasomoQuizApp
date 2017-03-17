@@ -1,4 +1,4 @@
-#bc-16-masomoquizapp
+# Masomo Quiz App
  
 This is an interactive app that contains quizzes on different subjects that a user can take and outputs the score at the end of every quiz.
 
@@ -9,9 +9,7 @@ The App provides the following functionality:
 *  User can take a quiz based on preference
 
 
-#Installation
-
-Describe the installation process e.g.
+# Installation
 
 1. Clone the repository
 2. cd into bc-16-masomoquizapp
