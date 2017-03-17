@@ -1,7 +1,7 @@
 import os
 class ListQuiz():
     def find(self):
-        path='C:/Users/andela/Documents/venv/MasomoQuizApp/quizzes/'
+        path='C:/Users/andela/Documents/venv/bc-16-masomoquizapp/quizzes/'
         for root, dirs, files in os.walk(path):
             for file in files:
                 if file.endswith(".json"):

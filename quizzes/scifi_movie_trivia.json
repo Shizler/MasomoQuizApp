@@ -1,0 +1,74 @@
+[ 
+	 { 
+	"question":" Anakin Skywalker, better known as Darth Vader, is killed in which Star Wars movie?",
+	"A": " Revenge of the Sith",
+	"B":" Empire Strikes Back",
+	"C": "A New Hope",
+	"D": " Return of the Jedi",
+	"answer":"D"
+	} ,
+	{ 
+	"question": " John Hammond, the billionaire, is at the center of which film?", 
+	"A":"  Iron Man", 
+	"B": "Jurassic Park", 
+	"C": " The Matrix", 
+	"D": "Hawkgirl", 
+	"answer":"B" 
+	} ,
+    { 
+	"question": "  What is the name of the robot that is featured in the 1956 classic science fiction film'Forbidden Planet'?", 
+	"A":" Clank", 
+	"B":" Sojourner", 
+	"C":" Johnny 5", 
+	"D":"Robby the Robot", 
+	"answer":"D" 
+	}, 
+	{ 
+	"question": " Which 2005 movie is a spin-off of the TV series 'Firefly'?", 
+	"A":"THX 1138", 
+	"B": " Serenity", 
+	"C": "The Chronicles of Riddick", 
+	"D": " Solaris", 
+	"answer":"B" 
+	} ,
+	{ 
+	"question": "  Played by Roddy Piper, protagonist John Nada finds some special sunglasses that allow him to see that the world is ruled by skull-faced aliens.", 
+	"A":"  Alien Nation", 
+	"B":"They Live", 
+	"C":" I Come in Peace", 
+	"D":" The Hidden", 
+	"answer":"B" 
+	} ,
+	{ 
+	"question": " With what film would you associate the phrase 'I'll Be Back'?", 
+	"A":"The Terminator", 
+	"B": "The Last Stand", 
+	"C": "Total Recall", 
+	"D": "Collateral Damage", 
+	"answer":"A" 
+	} ,
+	{ 
+	"question": "Who plays the role of Captain James T. Kirk in the rebooted Star Trek films?", 
+	"A":"  Benedict Cumberbatch", 
+	"B": "Karl Urban", 
+	"C": " Zachary Quinto", 
+	"D": " Chris Pine", 
+	"answer":"D" 
+	} ,
+	{ 
+	"question": " Loosely based on a short story by Philip K. Dick, who directed the 2002 hit 'Minority Report'?", 
+	"A":"  George Lucas", 
+	"B":" Steven Spielberg", 
+	"C":" James Cameron", 
+	"D":"  Francis Ford Coppola", 
+	"answer":"B" 
+	} ,
+	{ 
+	"question": " Which classic Sci-Fi film is based on a 1962 Anthony Burgess novel?", 
+	"A":" A Clockwork Orange", 
+	"B": " Invasion of the Body Snatchers", 
+	"C": "Cloverfield", 
+	"D": "Metropolis", 
+	"answer":"A" 
+	} 
+] 

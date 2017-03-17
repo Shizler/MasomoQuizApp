@@ -1,30 +1,21 @@
-from threading import Thread
-import json
-import time 
 import os
-from shutil import copyfile, move
+import json
 import click
+from threading import Thread
+from shutil import copyfile, move
+
 class QuizTake():
-  # def timer():
-  #   print ('time started...')
-  #   for i in xrange(10,0,-1):
-  #     time.sleep(1)
-  #     time_remaining -= 1;
-  #     print ('Time remaining: %d seconds\r '% i,)
-
-  #     sys.stdout.flush()
-
   def read_file(self,name):
     # receives <quiz_name> as in argument name
     # arg is passed to retrieve the particular quiz
-    file_path =''
-    path='C:\\Users\\andela\\Documents\\venv\\MasomoQuizApp\\quizzes\\'
+    file_path = ''
+    path = 'C:\\Users\\andela\\Documents\\venv\\bc-16-masomoquizapp\\quizzes\\'
     for root, dirs, files in os.walk(path):
         for file in files:
            if file == name+'.json':
               file_path = os.path.join(root,file)
 
-    if file_path =='':
+    if file_path == '':
       # checks if user has input a quiz not available
        print ("Quiz not found")
     else:
@@ -39,17 +30,19 @@ class QuizTake():
       for index, question in enumerate(data): 
         click.secho('********************************************************************************',fg='cyan')
         print (index+1, question['question']) 
-        print ("A:"+ question['A']) 
-        print ("B:"+ question['B']) 
-        print ("C:"+ question['C']) 
-        print ("D:"+ question['D']) 
+        print ("  A:"+ question['A']) 
+        print ("  B:"+ question['B']) 
+        print ("  C:"+ question['C']) 
+        print ("  D:"+ question['D']) 
+        print ('\n')
 
         
 
-        answers=input('Enter your answer')
-        if answers.isalpha():
+        answers=input('Enter your answer  ')
+        my_answer=answers.upper()
+        if my_answer.isalpha():
 
-          if question['answer'] == answers:
+          if question['answer'] == my_answer:
            answersList += 1
            print ("Correct Answer")
           else:
@@ -62,19 +55,18 @@ class QuizTake():
 
           print("You got {} answers right".format(answersList))
   def import_quiz(self,path):
-      print (path)
-      for root, dirs, files in os.walk(path):
-        for file in files:
-           if file.endswith('.json'):
-              file_path = os.path.join(root,file)
-              dest='C:/Users/andela/Documents/venv/MasomoQuizApp/quizzes'
-              print(file_path)
-              move(file_path,dest)
-              print ("successfully")
+      # print (path)
+      
+      try:
+        for root, dirs, files in os.walk(path):
+          for file in files:
+             if file.endswith('.json'):
+                file_path = os.path.join(root,file)
+                dest = 'C:/Users/andela/Documents/venv/bc-16-masomoquizapp/quizzes'
+                print(file_path)
+                move(file_path,dest)
+                print ("successfully")
+      except:
+        print ('Input a valid destination')
 
-  #             print(time_remaining)
-  # timer()
-  # t1=Thread(target=timer)
-  # t2=Thread(target=read_file)
-  # t1.start()
-  # t2.start()
+ 

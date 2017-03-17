@@ -13,10 +13,10 @@ Options:
 import sys
 import os
 import cmd
+import click
 from docopt import docopt, DocoptExit
 from list_quiz import ListQuiz
 from reading_json import QuizTake
-import click
 from design import title
 
 
@@ -67,8 +67,8 @@ class MasomoSystem(cmd.Cmd):
     @docopt_cmd
     def do_quiz_import(self, args):
         """Usage: quiz_import <path_to_quiz_JSON>"""
-        petpath=args["<path_to_quiz_JSON>"]
-        r.import_quiz(petpath)
+        src_path=args["<path_to_quiz_JSON>"]
+        r.import_quiz(src_path)
 
 
     @docopt_cmd
